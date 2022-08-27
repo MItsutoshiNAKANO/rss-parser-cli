@@ -1,0 +1,15 @@
+#! /usr/bin/env node
+// SPDX-License-Identifier: MIT
+'use strict'
+const yargs = require('yargs/yargs')
+const { hideBin } = require('yargs/helpers')
+const Parser = require('rss-parser')
+async function printSequence (ary, func) {
+  for (let i = 0; i < ary.length; ++i) { console.log(await func(ary[i])) }
+}
+const argv =
+yargs(hideBin(process.argv)).usage('Usage: $0 [options] url...'
+).option('options', { alias: 'o', description: 'parser options' }).argv
+const parser = new Parser(argv.options && JSON.parse(argv.options))
+const urls = argv._
+printSequence(urls, async u => await parser.parseURL(u))

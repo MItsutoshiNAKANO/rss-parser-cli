@@ -1,6 +1,26 @@
 {
+  "name": "@mitsutoshinakano/rss-parser-cli",
+  "version": "0.1.0",
+  "description": "RSS parser CLI",
+  "homepage": "https://github.com/MItsutoshiNAKANO/rss-parser-cli",
+  "bugs": "https://github.com/MItsutoshiNAKANO/rss-parser-cli/issues",
+  "license": "MIT",
+  "author": "Mitsutoshi Nakano",
+  "bin": "./rss-parser-cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MItsutoshiNAKANO/rss-parser-cli.git"
+  },
   "dependencies": {
     "rss-parser": "^3.12.0",
     "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "eslint": ">=8.22.0",
+    "jshint": ">=2.13.5",
+    "standard": "*"
+  },
+  "scripts": {
+    "test": "standard"
   }
 }
